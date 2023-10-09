@@ -89,8 +89,7 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number11()
     {
-        var date = DateTime.Now;
-        var answer = $"{date:2.2019.01.22}";
+        var answer = _date.Now.ToString($"{_date.Now2.2019.01.22}");
         return answer;
     }
 
