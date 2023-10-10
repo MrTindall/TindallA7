@@ -44,7 +44,7 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number04()
     {
-        var date = _date.Now.ToString("Year: yyyy 'Month:' MM, 'Day:' dd");
+        var date = _date.Now.ToString("Year: yyyy, 'Month:' MM, 'Day:' dd");
         var answer = $"{date}";
         return answer;
     }
@@ -64,7 +64,9 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number07()
     {
-        var answer = _date.Now.ToString($"'h':{_date.Now,10:hh}, 'm':{_date.Now:mm}, 's':{_date.Now:ss}");
+        var date1 = _date.Now.ToString($"'h':{_date.Now:hh}, 'm':{_date.Now:mm}, ");
+        var date2 = _date.Now.ToString($"'s':{_date.Now:ss}");
+        var answer = $"{date1,10}{date2}";
         return answer;
     }
 
