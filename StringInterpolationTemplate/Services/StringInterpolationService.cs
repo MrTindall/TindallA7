@@ -37,39 +37,40 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number03()
     {
-        var date = _date.Now.ToString("Day dd of MMMM, yyyy");
+        var date = _date.Now.ToString("'Day' dd 'of' MMMM, yyyy");
         var answer = $"{date}";
         return answer;
     }
 
     public string Number04()
     {
-        var date = _date.Now.ToString("Year: yyyy Month MM, Day dd");
+        var date = _date.Now.ToString("Year: yyyy 'Month:' MM, 'Day:' dd");
         var answer = $"{date}";
         return answer;
     }
 
     public string Number05()
     {
-        var answer = _date.Now.ToString($"{_date.Now,10:dddd}");
+        var date = _date.Now.ToString($"dddd");
+        var answer = $"{date,10}";
         return answer;
     }
 
     public string Number06()
     {
-        var answer = _date.Now.ToString($"{_date.Now,10:hh:mm:tt dddd}");
+        var answer = _date.Now.ToString($"{_date.Now,4:hh}:{_date.Now:mm} tt {_date.Now,6:'dddd'}");
         return answer;
     }
 
     public string Number07()
     {
-        var answer = _date.Now.ToString($"h:{_date.Now:hh}, m:{_date.Now:mm}, s:{_date.Now:ss}");
+        var answer = _date.Now.ToString($"'h':{_date.Now,10:hh}, 'm':{_date.Now:mm}, 's':{_date.Now:ss}");
         return answer;
     }
 
     public string Number08()
     {
-        var answer = _date.Now.ToString($"{_date.Now:yyyy.MM.hh.mm.ss}");
+        var answer = _date.Now.ToString($"{_date.Now:yyyy.MM.dd.hh.mm.ss}");
         return answer;
     }
 
@@ -89,8 +90,9 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number11()
     {
-        var answer = _date.Now.ToString($"{_date.Now2.2019.01.22}");
-        return answer;
+        var answer = _date.Now.ToString($"{_date.Now:yyyy}");
+        string hexadecimalYear = int.Parse(answer).ToString("X").ToUpper();
+        return hexadecimalYear;
     }
 
     

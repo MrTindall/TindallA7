@@ -103,8 +103,8 @@ public class StringInterpolationServiceTests
     [Fact]
     public void StringInterpolationService_Number11_Success()
     {
-        var response = _service.Number10();
+        var response = _service.Number11();
 
-        Assert.Equal("2019.01.22", response); // EDIT THIS TO MAKE IT WORK PROPERLY
+        Assert.Equal("7E3", response); // EDIT THIS TO MAKE IT WORK PROPERLY
     }
 }
